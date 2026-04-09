@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Million Phones – Verified Mobile Phone Numbers for Sales Teams</title>
+    <meta name="description" content="Million Phones provides verified mobile phone numbers for sales and outreach teams. Clean, accurate phone data via API and bulk access.">
+    <meta name="keywords" content="phone data, verified phone numbers, sales intelligence, B2B data, phone API, contact data, lead generation">
+    <link rel="canonical" href="https://millionphones.github.io">
+    <meta property="og:title" content="Million Phones – Verified Mobile Phone Numbers for Sales Teams">
+    <meta property="og:description" content="Clean, accurate phone data to fuel outbound pipelines that convert.">
+    <meta property="og:url" content="https://millionphones.github.io">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0B0F1A;
+            --surface: #121829;
+            --border: #1E2940;
+            --cyan: #3DC9E3;
+            --cyan-dim: rgba(61, 201, 227, 0.12);
+            --cyan-glow: rgba(61, 201, 227, 0.25);
+            --text: #E4E8F1;
+            --text-dim: #8A92A6;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .grain {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .glow-orb {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 70%);
+            filter: blur(80px);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        header {
+            position: relative;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-family: 'Space Mono', monospace;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--cyan);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span { color: var(--text-dim); font-weight: 400; }
+
+        nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 32px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--cyan); }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 120px 40px 100px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero .glow-orb {
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .badge {
+            display: inline-block;
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--cyan);
+            border: 1px solid var(--border);
+            background: var(--cyan-dim);
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 32px;
+        }
+
+        h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        h1 em {
+            font-style: normal;
+            color: var(--cyan);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-dim);
+            max-width: 560px;
+            margin: 0 auto 48px;
+            line-height: 1.7;
+        }
+
+        .cta-row {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--cyan);
+            color: var(--bg);
+        }
+
+        .btn-primary:hover {
+            background: #5DD8F0;
+            box-shadow: 0 0 30px var(--cyan-glow);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+        }
+
+        .features {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 40px 100px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(61, 201, 227, 0.3);
+            box-shadow: 0 4px 40px rgba(61, 201, 227, 0.06);
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--cyan-dim);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--text-dim);
+            line-height: 1.65;
+        }
+
+        .code-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 40px 100px;
+        }
+
+        .code-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .code-section > p {
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 15px;
+            margin-bottom: 32px;
+        }
+
+        .code-block {
+            background: #0D1117;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .code-header {
+            background: var(--surface);
+            padding: 12px 20px;
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            color: var(--text-dim);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .code-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .code-dot.r { background: #FF5F56; }
+        .code-dot.y { background: #FFBD2E; }
+        .code-dot.g { background: #27C93F; }
+
+        pre {
+            padding: 24px;
+            overflow-x: auto;
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--text);
+        }
+
+        pre .comment { color: #546178; }
+        pre .string { color: #7EE787; }
+        pre .key { color: var(--cyan); }
+        pre .method { color: #D2A8FF; }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: var(--text-dim);
+        }
+
+        footer a {
+            color: var(--cyan);
+            text-decoration: none;
+        }
+
+        footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            header { padding: 16px 20px; }
+            .hero { padding: 80px 20px 60px; }
+            .features { padding: 20px 20px 60px; }
+            .code-section { padding: 0 20px 60px; }
+            nav a { margin-left: 16px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="grain"></div>
+
+    <header>
+        <div class="logo">MillionPhones<span>.com</span></div>
+        <nav>
+            <a href="https://millionphones.com">Product</a>
+            <a href="https://millionphones.com/docs">API Docs</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="glow-orb"></div>
+        <div class="badge">Phone Data for Revenue Teams</div>
+        <h1>Verified mobile numbers that <em>actually connect</em></h1>
+        <p>Stop wasting dials on bad data. Million Phones gives sales teams clean, verified mobile phone numbers so every call counts.</p>
+        <div class="cta-row">
+            <a href="https://millionphones.com" class="btn btn-primary">Get Started</a>
+            <a href="https://millionphones.com/docs" class="btn btn-ghost">View API Docs</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Verified Mobile Numbers</h3>
+            <p>Every number is validated before delivery. No landlines, no dead numbers — just real mobile phones that ring.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>API &amp; Bulk Access</h3>
+            <p>Integrate directly into your pipeline via REST API, or upload CSV lists for bulk enrichment. Your workflow, your way.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🌍</div>
+            <h3>Global Coverage</h3>
+            <p>Phone numbers across the US, UK, EU, India, Latin America and more. Reach prospects wherever they are.</p>
+        </div>
+    </section>
+
+    <section class="code-section">
+        <h2>Simple integration</h2>
+        <p>Get verified phone numbers with a single API call.</p>
+        <div class="code-block">
+            <div class="code-header">
+                <span class="code-dot r"></span>
+                <span class="code-dot y"></span>
+                <span class="code-dot g"></span>
+                &nbsp; request.sh
+            </div>
+            <pre><span class="comment"># Look up a verified mobile number</span>
+<span class="method">curl</span> <span class="string">'https://millionphones.com/v1/phone?social_url=williamhgates'</span> \
+  --header <span class="string">'x-api-key: YOUR_SECRET_TOKEN'</span>
+
+<span class="comment"># Response</span>
+{
+  <span class="key">"social_url"</span>: <span class="string">"williamhgates"</span>,
+  <span class="key">"phone"</span>: <span class="string">"+1-415-555-0142"</span>,
+  <span class="key">"type"</span>: <span class="string">"mobile"</span>,
+  <span class="key">"verified"</span>: <span class="key">true</span>
+}</pre>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 <a href="https://millionphones.com">Million Phones</a> · Verified mobile phone numbers for sales teams · <a href="https://millionphones.com">millionphones.com</a></p>
+    </footer>
+</body>
+</html>
