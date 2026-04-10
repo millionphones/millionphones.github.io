@@ -1,0 +1,12 @@
+{
+  "name": "millionphones-examples",
+  "version": "1.0.0",
+  "description": "Integration examples for the Million Phones API",
+  "scripts": {
+    "lookup": "npx tsx examples/lookup.ts",
+    "batch": "npx tsx examples/batch-lookup.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0"
+  }
+}
